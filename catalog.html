@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CyberPulse — Catalog</title>
+    <title>CyberPulse — Courses</title>
     <link rel="stylesheet" href="/src/styles/main.scss" />
   </head>
   <body>
@@ -22,34 +22,71 @@
       </div>
     </header>
 
-    <main class="container catalog-page">
-      <h1 class="section-title">Available Programs</h1>
-      
-      <!-- Category Filters -->
-      <div class="categories">
-        <button class="category-btn active">All</button>
-        <button class="category-btn">Web Dev</button>
-        <button class="category-btn">QA</button>
-        <button class="category-btn">Data Science</button>
-      </div>
+    <main class="catalog-page">
+      <div class="container">
+        <h1 class="section-title">Available Programs</h1>
+        
+        <!-- Category Filters -->
+        <div class="categories">
+          <button class="category-btn active">All</button>
+          <button class="category-btn">Web Dev</button>
+          <button class="category-btn">QA</button>
+          <button class="category-btn">Data Science</button>
+        </div>
 
-      <!-- Course Cards Grid -->
-      <div class="catalog-grid">
-        <article class="course-card">
-          <h3>Frontend Developer</h3>
-          <p>HTML5, CSS3, JavaScript ES6+, and modern development workflow.</p>
-          <span class="price">$450</span>
-        </article>
-        <article class="course-card">
-          <h3>QA Engineer</h3>
-          <p>Manual and automated software testing fundamentals.</p>
-          <span class="price">$380</span>
-        </article>
-        <article class="course-card">
-          <h3>Python Data Analyst</h3>
-          <p>Data analysis, visualization, Pandas, NumPy, and SQL.</p>
-          <span class="price">$500</span>
-        </article>
+        <!-- Course Cards Grid -->
+        <div class="catalog-grid">
+          <article class="course-card">
+            <img 
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=500&q=80" 
+              alt="Frontend Developer" 
+              class="course-card__img"
+            />
+            <div class="course-card__body">
+              <span class="course-card__tag">Web Dev</span>
+              <h3 class="course-card__title">Frontend Developer</h3>
+              <p class="course-card__desc">HTML5, CSS3, JavaScript ES6+, and modern development workflow.</p>
+              <div class="course-card__footer">
+                <span class="course-card__price">$450</span>
+                <button class="btn btn--primary btn--sm">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <img 
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" 
+              alt="QA Engineer" 
+              class="course-card__img"
+            />
+            <div class="course-card__body">
+              <span class="course-card__tag">QA</span>
+              <h3 class="course-card__title">QA Engineer</h3>
+              <p class="course-card__desc">Manual and automated software testing fundamentals and tools.</p>
+              <div class="course-card__footer">
+                <span class="course-card__price">$380</span>
+                <button class="btn btn--primary btn--sm">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" 
+              alt="Python Data Analyst" 
+              class="course-card__img"
+            />
+            <div class="course-card__body">
+              <span class="course-card__tag">Data Science</span>
+              <h3 class="course-card__title">Python Data Analyst</h3>
+              <p class="course-card__desc">Data analysis, visualization, Pandas, NumPy, and SQL basics.</p>
+              <div class="course-card__footer">
+                <span class="course-card__price">$500</span>
+                <button class="btn btn--primary btn--sm">Details</button>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </main>
 
