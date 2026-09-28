@@ -10,9 +10,15 @@ export function initCatalog() {
 
   function renderCards(category = 'all') {
     catalogContainer.innerHTML = '';
+    
     const filtered = category === 'all' 
       ? coursesData 
       : coursesData.filter(item => item.category === category);
+
+    if (filtered.length === 0) {
+      catalogContainer.innerHTML = '<p>No courses found in this category.</p>';
+      return;
+    }
 
     filtered.forEach(course => {
       const card = document.createElement('article');
@@ -38,16 +44,19 @@ export function initCatalog() {
   filterBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       filterBtns.forEach(b => b.classList.remove('active'));
-      e.target.classList.add('active');
-      const category = e.target.dataset.category || 'all';
+      const targetBtn = e.currentTarget;
+      targetBtn.classList.add('active');
+      
+      const category = targetBtn.getAttribute('data-category') || 'all';
       renderCards(category);
     });
   });
 
   function attachModalEvents() {
-    document.querySelectorAll('.open-modal-btn').forEach(btn => {
+    const modalBtns = catalogContainer.querySelectorAll('.open-modal-btn');
+    modalBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const id = e.target.dataset.id;
+        const id = e.currentTarget.getAttribute('data-id');
         openModal(id);
       });
     });
@@ -62,6 +71,7 @@ export function initCatalog() {
 
     function renderModalBody() {
       const totalPrice = course.price + selectedDurationAdd + selectedFormatAdd;
+
       modalContent.innerHTML = `
         <button class="modal__close" id="modal-close-btn">&times;</button>
         <div class="modal__body-wrapper">
@@ -93,24 +103,25 @@ export function initCatalog() {
         </div>
       `;
 
-      document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+      const closeBtn = document.getElementById('modal-close-btn');
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-      const durationBtns = document.querySelectorAll('#duration-group .option-btn');
+      const durationBtns = modalContent.querySelectorAll('#duration-group .option-btn');
       durationBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
           durationBtns.forEach(b => b.classList.remove('active'));
-          e.target.classList.add('active');
-          selectedDurationAdd = Number(e.target.dataset.add);
+          e.currentTarget.classList.add('active');
+          selectedDurationAdd = Number(e.currentTarget.getAttribute('data-add')) || 0;
           updatePrice();
         });
       });
 
-      const formatBtns = document.querySelectorAll('#format-group .option-btn');
+      const formatBtns = modalContent.querySelectorAll('#format-group .option-btn');
       formatBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
           formatBtns.forEach(b => b.classList.remove('active'));
-          e.target.classList.add('active');
-          selectedFormatAdd = Number(e.target.dataset.add);
+          e.currentTarget.classList.add('active');
+          selectedFormatAdd = Number(e.currentTarget.getAttribute('data-add')) || 0;
           updatePrice();
         });
       });
