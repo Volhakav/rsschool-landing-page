@@ -4,27 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CyberPulse — Master Tech Skills</title>
-    <script type="module" crossorigin src="./assets/main-DHYO-7qQ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-DZWkLgyz.css">
+    <script type="module" crossorigin src="./assets/main-DxSlQo2O.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-DGWNnBCP.css">
   </head>
   <body>
     <header class="header">
       <div class="container header__container">
         <a href="index.html" class="logo">CyberPulse</a>
-        <nav class="nav">
+        <nav class="nav" id="nav-menu">
           <ul class="nav__list">
             <li><a href="index.html" class="nav__link active">Home</a></li>
             <li><a href="catalog.html" class="nav__link">Courses</a></li>
           </ul>
         </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          🌙
-        </button>
+        <div class="header__actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            🌙
+          </button>
+          <button id="burger-btn" class="burger-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- Hero Section with Image -->
+      <!-- Hero Section -->
       <section class="hero">
         <div class="container hero__container">
           <div class="hero__content">
@@ -91,15 +98,45 @@
         </div>
       </section>
 
-      <!-- Slider Section Placeholder -->
+      <!-- Slider Section -->
       <section class="slider-section">
         <div class="container">
           <h2 class="section-title">Student Stories</h2>
-          <div class="slider-placeholder">
-            <div class="testimonial-card">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Alex Rivera" class="testimonial-card__avatar" />
-              <p class="testimonial-card__text">"CyberPulse helped me transition from sales to Frontend Development in just 5 months. The mentor guidance was top-tier!"</p>
-              <span class="testimonial-card__author">Alex Rivera — Frontend Engineer</span>
+          
+          <div class="slider-container">
+            <div id="slider-track" class="slider-track">
+              <!-- Slide 1 -->
+              <div class="slide">
+                <div class="testimonial-card">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Alex Rivera" class="testimonial-card__avatar" />
+                  <p class="testimonial-card__text">"CyberPulse helped me transition from sales to Frontend Development in just 5 months. The mentor guidance was top-tier!"</p>
+                  <span class="testimonial-card__author">Alex Rivera — Frontend Engineer</span>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="slide">
+                <div class="testimonial-card">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="David Chen" class="testimonial-card__avatar" />
+                  <p class="testimonial-card__text">"The QA course gave me practical automation skills that immediately landed me my first tech job with a competitive salary."</p>
+                  <span class="testimonial-card__author">David Chen — QA Automation Lead</span>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="slide">
+                <div class="testimonial-card">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins" class="testimonial-card__avatar" />
+                  <p class="testimonial-card__text">"Learning Data Science with real-world project portfolios gave me the confidence to ace technical interviews."</p>
+                  <span class="testimonial-card__author">Sarah Jenkins — Data Analyst</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="slider-controls">
+              <button id="slider-prev" aria-label="Previous slide">&larr;</button>
+              <button id="slider-next" aria-label="Next slide">&rarr;</button>
             </div>
           </div>
         </div>

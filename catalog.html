@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CyberPulse — Courses</title>
-    <script type="module" crossorigin src="./assets/main-DHYO-7qQ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-DZWkLgyz.css">
+    <script type="module" crossorigin src="./assets/main-DxSlQo2O.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-DGWNnBCP.css">
   </head>
   <body>
     <header class="header">
       <div class="container header__container">
         <a href="index.html" class="logo">CyberPulse</a>
-        <nav class="nav">
+        <nav class="nav" id="nav-menu">
           <ul class="nav__list">
             <li><a href="index.html" class="nav__link">Home</a></li>
             <li><a href="catalog.html" class="nav__link active">Courses</a></li>
@@ -20,6 +20,11 @@
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
           🌙
         </button>
+        <button id="burger-btn" class="burger-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
@@ -27,69 +32,23 @@
       <div class="container">
         <h1 class="section-title">Available Programs</h1>
         
-        <!-- Category Filters -->
+        <!-- Category Filter Buttons -->
         <div class="categories">
-          <button class="category-btn active">All</button>
-          <button class="category-btn">Web Dev</button>
-          <button class="category-btn">QA</button>
-          <button class="category-btn">Data Science</button>
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="web">Web Dev</button>
+          <button class="category-btn" data-category="qa">QA</button>
+          <button class="category-btn" data-category="ds">Data Science</button>
         </div>
 
-        <!-- Course Cards Grid -->
-        <div class="catalog-grid">
-          <article class="course-card">
-            <img 
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=500&q=80" 
-              alt="Frontend Developer" 
-              class="course-card__img"
-            />
-            <div class="course-card__body">
-              <span class="course-card__tag">Web Dev</span>
-              <h3 class="course-card__title">Frontend Developer</h3>
-              <p class="course-card__desc">HTML5, CSS3, JavaScript ES6+, and modern development workflow.</p>
-              <div class="course-card__footer">
-                <span class="course-card__price">$450</span>
-                <button class="btn btn--primary btn--sm">Details</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <img 
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" 
-              alt="QA Engineer" 
-              class="course-card__img"
-            />
-            <div class="course-card__body">
-              <span class="course-card__tag">QA</span>
-              <h3 class="course-card__title">QA Engineer</h3>
-              <p class="course-card__desc">Manual and automated software testing fundamentals and tools.</p>
-              <div class="course-card__footer">
-                <span class="course-card__price">$380</span>
-                <button class="btn btn--primary btn--sm">Details</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <img 
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" 
-              alt="Python Data Analyst" 
-              class="course-card__img"
-            />
-            <div class="course-card__body">
-              <span class="course-card__tag">Data Science</span>
-              <h3 class="course-card__title">Python Data Analyst</h3>
-              <p class="course-card__desc">Data analysis, visualization, Pandas, NumPy, and SQL basics.</p>
-              <div class="course-card__footer">
-                <span class="course-card__price">$500</span>
-                <button class="btn btn--primary btn--sm">Details</button>
-              </div>
-            </div>
-          </article>
-        </div>
+        <!-- Course Cards Grid Container -->
+        <div id="catalog-grid" class="catalog-grid"></div>
       </div>
     </main>
+
+    <!-- Modal Window -->
+    <div id="course-modal" class="modal">
+      <div id="modal-content" class="modal__content"></div>
+    </div>
 
     <footer class="footer">
       <div class="container footer__container">
